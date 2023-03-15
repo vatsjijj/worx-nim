@@ -1,0 +1,5 @@
+1 0 > .nl
+0 1 < .nl
+1 1 = .nl
+
+1 if "hello" .nl else "bye" .nl then

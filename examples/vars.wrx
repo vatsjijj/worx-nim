@@ -1,0 +1,3 @@
+A .ds variable .var
+10 A .ds ! .var
+A @ .nl

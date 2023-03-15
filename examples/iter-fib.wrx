@@ -1,0 +1,4 @@
+fib : ( x1 -- x2 ) 
+  0 1 rot 0 ?do over f+ swap loop drop ;
+
+10000000 fib .nl
