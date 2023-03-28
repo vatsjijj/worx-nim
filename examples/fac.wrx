@@ -1,4 +1,5 @@
-fac : ( n -- n! ) 
-  dup 1 > if dup 1 f- fac f* then ;
+fac ( n -- n! ) {
+  dup 1 > if dup 1 f- fac f* then
+}
 
 40 fac .nl

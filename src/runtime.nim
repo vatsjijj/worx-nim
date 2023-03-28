@@ -282,15 +282,15 @@ proc loop() =
   dec jmpCount
   discard jmp.pop()
 
-proc colon() =
+proc lbrace() =
   let name: string = ds.popString()
   beginWord = loc + 1
-  while toks[loc] != ";":
+  while toks[loc] != "}":
     adv()
   endWord = loc
   words[name] = [beginWord, endWord]
 
-proc semicolon() =
+proc rbrace() =
   jmp[jmpCount - 1].jump()
   dec jmpCount
   discard jmp.pop()
@@ -351,8 +351,8 @@ proc run*() =
       of "?do": qmdo()
       of "loop": loop()
       of "i": rs.push(botLim[level - 1])
-      of ":": colon()
-      of ";": semicolon()
+      of "{": lbrace()
+      of "}": rbrace()
       else:
         try:
           ds.push(tok.parseFloat())

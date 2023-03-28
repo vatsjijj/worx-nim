@@ -1,7 +1,8 @@
-fib : ( x1 -- x2 ) 
+fib ( x1 -- x2 ) {
   TERM ! VAL ! PREV !
   TERM @ 0 = if PREV @ else
     VAL @ dup PREV @ l+ TERM @ 1 l- fib
-  then TERM VAL PREV del del del ;
+  then TERM VAL PREV del del del
+}
 
 0 1 80 fib .nl

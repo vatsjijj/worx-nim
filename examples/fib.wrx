@@ -1,5 +1,6 @@
-fib : ( n1 -- n2 ) 
+fib ( n1 -- n2 ) {
   dup 1 > if
-    1 - dup 1 - fib swap fib + then ;
+    1 - dup 1 - fib swap fib + then
+}
 
 30 fib .nl
